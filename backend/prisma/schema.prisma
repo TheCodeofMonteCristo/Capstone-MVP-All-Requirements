@@ -1,0 +1,22 @@
+// Define the database connection
+datasource db {
+  provider = "postgresql" // Use PostgreSQL as the database provider
+  url      = env("DATABASE_URL") // Use the DATABASE_URL from the .env file
+}
+
+// Define the Prisma generator
+generator client {
+  provider = "prisma-client-js" // Generate Prisma client JavaScript code
+}
+
+// Define the City model which will represent the cities (products)
+model City {
+  id          Int      @id @default(autoincrement()) // Primary key, auto-incremented
+  name        String   // Name of the city
+  description String   // Description of the city
+  imageUrl    String   // URL to the city's image
+  price       Float    // Price of the city (eCommerce price)
+  createdAt   DateTime @default(now()) // Timestamp when the city is created
+  updatedAt   DateTime @updatedAt // Timestamp when the city is updated
+}
+
