@@ -4,8 +4,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.css'; // Import global styles
+import App from './App'; // Import the main App component
 
 // Rendering the App component inside the div with id "root" in index.html
 const root = ReactDOM.createRoot(document.getElementById('root'));
